@@ -1,36 +1,34 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 
-const SearchBar = () => {
-  return (
-    <Fragment>
-      <strong>Search for Stocks!</strong>
-      <input type="text" onChange={null}/>
-      <br/>
+const SearchBar = ({handleInput, handleRadio, handleSelect}) => {
 
-      <strong>Sort by:</strong>
-      <label>
-        <input type="radio" value="Alphabetically" checked={null} onChange={null}/>
-        Alphabetically
-      </label>
-      <label>
-        <input type="radio" value="Price" checked={null} onChange={null}/>
-        Price
-      </label>
-      <br/>
+    return (<Fragment>
+        <strong>Search for Stocks!</strong>
+        <input type="text" onChange={handleInput}/>
+        <br/>
 
-      <label>
-        <strong>Filter:</strong>
-        <select onChange={null}>
-          <option value="Tech">Tech</option>
-          <option value="Sportswear">Sportswear</option>
-          <option value="Finance">Finance</option>
-        </select>
-      </label>
+        <strong>Sort by:</strong>
+        <label>
+            <input type="radio" value="Alphabetically" checked={false} onChange={handleRadio}/>
+            Alphabetically
+        </label>
+        <label>
+            <input type="radio" value="Price" checked={false} onChange={handleRadio}/>
+            Price
+        </label>
+        <br/>
 
+        <label>
+            <strong>Filter:</strong>
+            <select onChange={handleSelect}>
+                <option value="All" default>All</option>
+                <option value="Tech">Tech</option>
+                <option value="Sportswear">Sportswear</option>
+                <option value="Finance">Finance</option>
+            </select>
+        </label>
 
-    </Fragment>
-  );
+    </Fragment>);
 }
-
 
 export default SearchBar;
