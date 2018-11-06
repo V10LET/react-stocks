@@ -1,10 +1,9 @@
 import React,{Fragment} from 'react'
 
-const Stock = () => (
+const Stock = ({stock}) => (
   <Fragment>
     <li class="list-group-item">
-      {//ticker name: price
-      }
+      {stock.ticker} : {stock.price} : {stock.time}
     </li>
   </Fragment>
 );

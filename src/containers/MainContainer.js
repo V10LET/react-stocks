@@ -56,8 +56,11 @@ class MainContainer extends Component {
     // purchase a stock
     handlePurchase = (event) => {
         Object.values(this.state.stocks).map(stock=> {
+            const newStock = {
+                ...stock, time: new Date().toLocaleString()
+            }
             if (stock.id === Number(event.target.value)) {
-                this.setState({purchased: [...this.state.purchased, stock]})
+                this.setState({purchased: [...this.state.purchased, newStock]})
             }
         })
     }
